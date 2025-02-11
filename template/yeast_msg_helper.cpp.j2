@@ -2,14 +2,14 @@
 
 namespace yeast_msg_helper
 {
-{%for typename, (primatives, refs) in type_members.items() %}
+{%for typename, (primitives, refs) in type_members.items() %}
     yeast_ros2_interfaces::msg::{{typename}} to_msg(yeast_motion::{{typename}} yeast_type)
     {
         yeast_ros2_interfaces::msg::{{typename}} msg;
 
-        // Primative Types
-{%for primative in primatives %}
-        msg.{{primative}} = yeast_type.{{primative}};
+        // Primitive Types
+{%for primitive in primitives %}
+        msg.{{primitive}} = yeast_type.{{primitive}};
 {% endfor %}
 
         // Referenced Types
@@ -24,9 +24,9 @@ namespace yeast_msg_helper
     {
         yeast_motion::{{typename}} yeast_type;
 
-        // Primative Types
-{%for primative in primatives %}
-        yeast_type.{{primative}} = msg.{{primative}};
+        // Primitive Types
+{%for primitive in primitives %}
+        yeast_type.{{primitive}} = msg.{{primitive}};
 {% endfor %}
 
         // Referenced Types

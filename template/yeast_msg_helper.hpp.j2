@@ -9,7 +9,7 @@
 
 namespace yeast_msg_helper
 {
-{%for typename, (primatives, refs) in type_members.items() %}
+{%for typename, (primitives, refs) in type_members.items() %}
     yeast_ros2_interfaces::msg::{{typename}} to_msg(yeast_motion::{{typename}} yeast_type);
     yeast_motion::{{typename}} from_msg(yeast_ros2_interfaces::msg::{{typename}} msg);
 
