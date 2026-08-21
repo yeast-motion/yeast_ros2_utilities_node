@@ -72,7 +72,7 @@ foreach(rdependency ${ros_find_package_list})
   find_package(${rdependency} REQUIRED)
 endforeach()
 
-find_package(Boost REQUIRED COMPONENTS ${boost_libraries_list}) 
+find_package(Boost CONFIG REQUIRED COMPONENTS ${boost_libraries_list}) 
 find_package (Eigen3 3.4.90 REQUIRED NO_MODULE)
 
 add_library(${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/src/yeast_msg_helper.cpp)
